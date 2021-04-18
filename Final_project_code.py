@@ -11,6 +11,7 @@ aa_summary = page_aa.summary[0:195]
 # print(aa_summary)
 
 yelp_api_key = '4A0HCpyZ1rG4ktcbb5tOkRh4HsR4LREJRG2u-RMTCgik4otTdY5Kpkptl9gMak6yZD3wQbAf1N3LTTvPToc39-rIfMHP60OowZRVwp_INkFV52PfnyHW_UIArTh7YHYx'
+yelp_oauth = OAuth1(yelp_api_key)
 
 ENDPOINTS_YELP = 'https://api.yelp.com/v3'
 
@@ -68,6 +69,11 @@ def save_cache(cache):
     fw = open(CACHE_FILE_NAME,"w")
     fw.write(dumped_json_cache)
     fw.close()
+
+def make_request(baseurl, params, oauth):
+    response = requests.get(baseurl, params=params, auth=oauth)
+    return response.json()
+
 
 city = input("Please input the full name of the city that you would like to know")
 
