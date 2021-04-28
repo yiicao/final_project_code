@@ -175,14 +175,5 @@ def interactive_prompt():
 
 
 if __name__=="__main__":
-    # get_newsapi_info()
-    # creat_yelp_db()
     interactive_prompt()
-    # city = input("Please input the full name of the city that you would like to know")
-
-    # restaurant = input("Interested in most popular restaurant in that city? Y/N")
-
-    # news = input("Also interested in latest news about that city? Y/N")
-
-    # make_request_yelp('ann arbor')
-    # creat_yelp_db()
+   
