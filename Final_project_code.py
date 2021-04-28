@@ -72,7 +72,7 @@ def insert_db_infor(restaurant_list):
     for each in restaurant_list:
         insertion = [each['RestaurantId'], each['Name'], each['Rating'], each['Latitude'], each['Longitude'], each['City']]
         cur.execute(insert_restaurant_infor, insertion)
-    
+
     cur.execute(insert_city_infor, [restaurant_list[-1]['City']])
     conn.commit()
     conn.close()
@@ -122,7 +122,7 @@ def make_request_yelp(city):
         'location': city.replace(' ', '+'),
         'limit': 50
     }
-    
+
     url = '{0}{1}'.format(yelp_api_host, quote(yelp_search_path.encode('utf8')))
     headers = {
         'Authorization': 'Bearer %s' % yelp_api_key,
